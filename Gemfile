@@ -35,7 +35,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'ruby-debug-base19'
+#gem 'ruby-debug-base19'
 
 #Http lib
 gem 'httparty'
