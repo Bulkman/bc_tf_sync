@@ -1,3 +1,58 @@
 // Place all the styles related to the main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    text-align: center;
+}	
+
+.finished_todos_h2 {
+  font-family:Arial Black;
+  background-color: #ccffc2;
+}
+
+.unfinished_todos_h2 {
+  font-family:Arial Black;
+  background-color: #ffc1cb;
+}
+
+h3 {
+  font-family:Arial Black;
+  background-color: #fff79b;
+}
+
+.wrapper {
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+    background-color:#ededed;
+    -webkit-border-top-left-radius:10px;
+    -moz-border-radius-topleft:10px;
+    border-top-left-radius:10px;
+    -webkit-border-top-right-radius:10px;
+    -moz-border-radius-topright:10px;
+    border-top-right-radius:10px;
+    -webkit-border-bottom-right-radius:10px;
+    -moz-border-radius-bottomright:10px;
+    border-bottom-right-radius:10px;
+    -webkit-border-bottom-left-radius:10px;
+    -moz-border-radius-bottomleft:10px;
+    border-bottom-left-radius:10px;
+    text-indent:0px;
+    border:1px solid #dcdcdc;
+    color:#777777;
+    font-family:Arial Black;
+    font-size:14px;
+    font-weight:bold;
+    font-style:normal;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #ffffff;
+    vertical-align:middle;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width: 25%;
+}

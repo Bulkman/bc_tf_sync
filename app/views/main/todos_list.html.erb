@@ -1,7 +1,7 @@
-<h2>Work is progress todos list</h2>
+<h2 class="unfinished_todos_h2">Work is progress todos list</h2>
 <% for unfinished_todo in @unfinished_todos_list_array %>
 	<h3><%= unfinished_todo["name"] %></h3>
-		<table>
+		<table class="generic_table">
 			<tbody>
 				<% @unfinished_todos_list_completed_todos.each do |todos| %>
 					<% unless todos.nil? %>
@@ -18,10 +18,10 @@
 		</table><br/>
 <% end %>
 
-<h2>Fully completed todos list</h2>
+<h2 class="finished_todos_h2">Fully completed todos list</h2>
 <% for finished_todo in @finished_todos_list_array %>
 	<h3><%= finished_todo["name"] %></h3>
-		<table>
+		<table class="generic_table">
 			<tbody>
 				<% @finished_todos_list_completed_todos.each do |todos| %>
 					<% unless todos.nil? %>
@@ -37,7 +37,7 @@
 			</tbody>
 		</table><br/>		
 <% end %>
-
+<br><br>
 <%= form_for :upload_build, :html => {:multipart => true} do |f| %>
 	<%= hidden_field_tag  :project_id, @current_project_id  %>
 	<p>
@@ -45,7 +45,7 @@
 		<br>
 		<a href="https://testflightapp.com/account/#api">Get your API token</a>
 		<br>
-		<%= f.text_field :api_token %>
+		<%= f.text_field :api_token, class: "generic_long_input" %>
 	</p>
 	
 	<p>
@@ -53,24 +53,24 @@
 		<br>
 		<a href="https://testflightapp.com/dashboard/team/edit/?next=/api/doc/">Get your team token</a>
 		<br>
-		<%= f.text_field :team_token %>
+		<%= f.text_field :team_token, class: "generic_long_input" %>
 	</p>
 	
 	<p>
 		<%= f.label :title_accsses_list, "Accsses list" %>
 		<br>
-		<%= f.text_field :accsses_list %>
+		<%= f.text_field :accsses_list, class: "generic_long_input" %>
 	</p>
 	
 	<p>
 		<%= f.label :title_release_notes, "Release notes" %>
 		<br>
-		<%= f.text_area :release_notes, :value => "Rn here\n", :size => "80x20" %>
+		<%= f.text_area :release_notes, :value => "Rn here\n", :size => "80x20", class: "generic_text_area" %>
 	</p>
 	
 	<p>
 		<%= f.label :title_upload_file, "Upload file" %> : 
 		<%= file_field :datafile, :datafile %>
 	</p>
-	<%= submit_tag "Upload to TestFlight!" %>
+	<%= submit_tag "Upload to TestFlight!", class: "generic_upload_button" %>
 <% end %>

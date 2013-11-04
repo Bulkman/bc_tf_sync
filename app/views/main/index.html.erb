@@ -1,20 +1,22 @@
-<%= form_for :main, :url => { :action => :projects_list } do |f| %>
-  <p>
-    <%= f.label :title_login, "Basecamp login" %><br>
-    <%= f.text_field :login %>
-  </p>
- 
-  <p>
-    <%= f.label :title_pass, "Basecamp pass" %><br>
-    <%= f.password_field :password %>
-  </p>
-  
-  <p>
-  	<%= f.label :title_id, "Basecamp id" %><br>
- 	<%= f.text_field :basecamp_id %>
-  </p>
-  
-  <p>
-    <%= f.submit "Continue" %>
-  </p>
-<% end %>
+<div class="wrapper">
+	<%= form_for :main, :url => { :action => :projects_list } do |f| %>
+	  <p>
+	    <%= f.label :title_login, "Basecamp login" %><br>
+	    <%= f.text_field :login, class: "generic_input" %>
+	  </p>
+	 
+	  <p>
+	    <%= f.label :title_pass, "Basecamp pass" %><br>
+	    <%= f.password_field :password, class: "generic_input" %>
+	  </p>
+	  
+	  <p>
+	  	<%= f.label :title_id, "Basecamp id" %><br>
+	 	<%= f.text_field :basecamp_id, class: "generic_input" %>
+	  </p>
+	  
+	  <p>
+	    <%= f.submit "Continue", class: "generic_submit_button" %>
+	  </p>
+	<% end %>
+</div>
