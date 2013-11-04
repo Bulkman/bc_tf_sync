@@ -29,7 +29,6 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     addressable (2.3.5)
-    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     builder (3.0.4)
     coffee-rails (3.2.2)
@@ -39,7 +38,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    columnize (0.3.6)
     engineyard (2.3.1)
       engineyard-cloud-client (~> 1.0.14)
       engineyard-serverside-adapter (= 2.2.0)
@@ -70,8 +68,6 @@ GEM
     json (1.8.1)
     launchy (2.3.0)
       addressable (~> 2.3)
-    linecache19 (0.5.12)
-      ruby_core_source (>= 0.1.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -108,12 +104,6 @@ GEM
       json (~> 1.4)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    ruby-debug-base19 (0.11.25)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby_core_source (0.1.5)
-      archive-tar-minitar (>= 0.5.2)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -145,7 +135,6 @@ DEPENDENCIES
   jquery-rails
   json
   rails (= 3.2.6)
-  ruby-debug-base19
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
