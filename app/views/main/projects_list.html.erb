@@ -1,0 +1,14 @@
+<table>
+	<thead>
+		<tr>
+			<th>Projects</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for project in @projects_list_array %>
+			<tr>
+				<td><%= link_to project["name"], { :controller => "main", :action => :todos_list, project_id: project["id"] }, :method => :post %></td>
+			</tr>		
+		<% end %>
+	</tbody>
+</table>

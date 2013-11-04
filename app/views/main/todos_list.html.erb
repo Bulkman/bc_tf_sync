@@ -1,0 +1,76 @@
+<h2>Work is progress todos list</h2>
+<% for unfinished_todo in @unfinished_todos_list_array %>
+	<h3><%= unfinished_todo["name"] %></h3>
+		<table>
+			<tbody>
+				<% @unfinished_todos_list_completed_todos.each do |todos| %>
+					<% unless todos.nil? %>
+						<% todos.select { |key, _| key == unfinished_todo["id"] } %>
+						<% todos[1].each do |todo| %>
+							<tr>
+								<td><%= check_box_tag :task_cb, todo["content"], false %></td>
+								<td><%= label_tag :todo, todo["content"] %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table><br/>
+<% end %>
+
+<h2>Fully completed todos list</h2>
+<% for finished_todo in @finished_todos_list_array %>
+	<h3><%= finished_todo["name"] %></h3>
+		<table>
+			<tbody>
+				<% @finished_todos_list_completed_todos.each do |todos| %>
+					<% unless todos.nil? %>
+						<% todos.select { |key, _| key == finished_todo["id"] } %>
+						<% todos[1].each do |todo| %>
+							<tr>
+								<td><%= check_box_tag :task_cb, todo["content"], false %></td>
+								<td><%= label_tag :todo, todo["content"] %></td>
+							</tr>
+						<% end %>
+					<% end %>
+				<% end %>
+			</tbody>
+		</table><br/>		
+<% end %>
+
+<%= form_for :upload_build, :html => {:multipart => true} do |f| %>
+	<%= hidden_field_tag  :project_id, @current_project_id  %>
+	<p>
+		<%= f.label :title_api_token, "API token" %>
+		<br>
+		<a href="https://testflightapp.com/account/#api">Get your API token</a>
+		<br>
+		<%= f.text_field :api_token %>
+	</p>
+	
+	<p>
+		<%= f.label :title_team_token, "Team token" %>
+		<br>
+		<a href="https://testflightapp.com/dashboard/team/edit/?next=/api/doc/">Get your team token</a>
+		<br>
+		<%= f.text_field :team_token %>
+	</p>
+	
+	<p>
+		<%= f.label :title_accsses_list, "Accsses list" %>
+		<br>
+		<%= f.text_field :accsses_list %>
+	</p>
+	
+	<p>
+		<%= f.label :title_release_notes, "Release notes" %>
+		<br>
+		<%= f.text_area :release_notes, :value => "Rn here\n", :size => "80x20" %>
+	</p>
+	
+	<p>
+		<%= f.label :title_upload_file, "Upload file" %> : 
+		<%= file_field :datafile, :datafile %>
+	</p>
+	<%= submit_tag "Upload to TestFlight!" %>
+<% end %>
